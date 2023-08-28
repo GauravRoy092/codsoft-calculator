@@ -1,52 +1,114 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width">
-  <title>Calculate me! - A calculator made my me</title>
-  <link href="style.css" rel="stylesheet" type="text/css" />
-  <link href="utils.css" rel="stylesheet" type="text/css" />
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        #call {
+            border: 1px solid black;
+            width: 215px;
+            text-align: center;
+        }
+
+        #scr {
+            width: 84%;
+            padding: 25px 14px;
+            font-weight: bold;
+            font-size: 20px;
+        }
+
+        input {
+            padding: 12px 15px;
+            font-weight: bold;
+            margin: 2px 3px;
+            border: 1px solid green;
+        }
+        td{
+            margin-left: 20px
+        }
+
+        .cal {
+            border: 1px solid black;
+        }
+
+        .main {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .buttons {
+            width: 100%;
+        }
+    </style>
+
 </head>
 
 <body>
-  <h1 class="text-center">Welcome to Calculate me!</h1>
-  <div class="container flex flex-col items-center mx-auto m-w-20">
-    <div class="row">
-      <input class="input" type="text"/>
-    </div>
-    <div class="row">
-      <button class="button">C</button>
-      <button class="button">%</button>
-      <button class="button">M+</button>
-      <button class="button">M-</button>
-    </div>
-    <div class="row">
-      <button class="button">7</button>
-      <button class="button">8</button>
-      <button class="button">9</button>
-      <button class="button">*</button>
-    </div>
-    <div class="row">
-      <button class="button">4</button>
-      <button class="button">5</button>
-      <button class="button">6</button>
-      <button class="button">/</button>
-    </div>
-    <div class="row">
-      <button class="button">1</button>
-      <button class="button">2</button>
-      <button class="button">3</button>
-      <button class="button">+</button>
-    </div>
-    <div class="row">
-      <button class="button">0</button>
-      <button class="button">.</button>
-      <button class="button">=</button>
-      <button class="button">-</button>
-    </div>
-  </div>
-  <script src="script.js"></script>
+
+    <div class="main">
+        <form action="" id="call">
+
+
+            <input type="text" class="cal" name="cal" id="scr">
+            <br>
+            <div class="buttons">
+                <table>
+                    <tr></tr>
+                    <tr>
+                        <td><input type="button" value="C" name="none" onclick="call.cal.value = '' "></td>
+                        <td><input type="button" value="%" name="per" onclick="call.cal.value /= '100' "></td>
+                        <td><input type="button" value="←" name="none" onclick="Back() "></td>
+                        <td> <input type="button" value=" / " name="div" onclick=" call.cal.value += '/' "></td>
+                    </tr>
+                    <tr>
+                        <td><input type="button" value="7" name="7" onclick="call.cal.value +='7'"></td>
+                        <td><input type="button" value="8" name="8" onclick="call.cal.value +='8'"></td>
+                        <td><input type="button" value="9" name="9"onclick="call.cal.value +='9'"></td>
+                        <td> <input type="button" value="X" name="mul" onclick=" call.cal.value += '*' "></td>
+                    </tr>
+                    <tr>
+                        <td><input type="button" value="4" name="4" onclick="call.cal.value +='4'"></td>
+                        <td><input type="button" value="5" name="5" onclick="call.cal.value +='5'"></td>
+                        <td><input type="button" value="6" name="6"onclick="call.cal.value +='6'"></td>
+                        <td> <input type="button" value="-" name="sub" onclick=" call.cal.value += '-' "></td>
+                    </tr>
+                    <tr>
+                        <td><input type="button" value="1" name="1" onclick="call.cal.value +='1'"></td>
+                        <td><input type="button" value="2" name="2" onclick="call.cal.value +='2'"></td>
+                        <td><input type="button" value="3" name="3"onclick="call.cal.value +='3'"></td>
+                        <td> <input type="button" value="+" name="add" onclick=" call.cal.value += '+' "></td>
+                    </tr>
+                    <tr>
+                        <td><input type="button" value="00" name="dbz" onclick="call.cal.value +='00'"></td>
+                        <td><input type="button" value="0" name="zer" onclick="call.cal.value +='2'"></td>
+                        <td><input type="button" value="." name="dot"onclick="call.cal.value +='.'"></td>
+                        <td> <input type="button" value="=" name="add" onclick=" call.cal.value = eval(call.cal.value) "></td>
+                    </tr>
+    
+                </table>
+
+
+
+
+               
+
+    <script>
+        function Back() {
+            var del = document.getElementById('scr');
+            del.value = del.value.slice(0, -1);
+        }
+    </script>
 </body>
 
 </html>
